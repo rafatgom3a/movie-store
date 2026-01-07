@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Linkedin, Film } from "lucide-react";
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function Footer() {
+  const { dark } = useContext(ThemeContext);
+
   return (
-    <footer className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 border-t border-gray-200 dark:border-gray-700">
+    <footer className={`${dark ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white text-gray-800 border-gray-200"} border-t`}>
       <div className="w-full max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         
         {/* Brand */}
@@ -12,10 +16,10 @@ export default function Footer() {
             <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
               <Film className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold">MovieStore</span>
+            <span className={`text-xl font-bold ${dark ? "text-white" : "text-gray-900"}`}>MovieStore</span>
           </div>
 
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+          <p className={`text-sm ${dark ? "text-gray-400" : "text-gray-500"}`}>
             Discover popular, trending, and upcoming movies.
             Build your watchlist and favorites in one place.
           </p>
@@ -49,17 +53,18 @@ export default function Footer() {
             <a href="#" className="hover:text-indigo-400"><Linkedin size={20} /></a>
           </div>
 
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+          <p className={`text-sm ${dark ? "text-gray-400" : "text-gray-500"}`}>
             Follow us for movie updates and recommendations.
           </p>
         </div>
       </div>
 
-      <div className="border-t border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-6 py-4 text-center text-xs text-gray-500 dark:text-gray-400">
+      <div className={`border-t ${dark ? "border-gray-700" : "border-gray-200"}`}>
+        <div className={`max-w-7xl mx-auto px-6 py-4 text-center text-xs ${dark ? "text-gray-400" : "text-gray-500"}`}>
           © {new Date().getFullYear()} MovieStore. All rights reserved.
         </div>
       </div>
     </footer>
   );
 }
+

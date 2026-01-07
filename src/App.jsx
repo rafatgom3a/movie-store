@@ -16,7 +16,7 @@ export default function App() {
     <BrowserRouter>
       <Navbar />
 
-      <main className="pt-20 min-h-screen bg-gray-100 dark:bg-gray-900">
+      <main className="pt-10 min-h-screen bg-gray-100 dark:bg-gray-900">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
