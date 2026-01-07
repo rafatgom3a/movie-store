@@ -26,7 +26,7 @@ export default function Movies() {
 
   if (loading) {
     return (
-      <div className={`w-full min-h-screen flex justify-center items-center ${dark ? "bg-black text-white" : "bg-white text-black"}`}>
+      <div className={`w-full min-h-screen flex justify-center items-center ${dark ? "bg-zinc-950 text-zinc-100" : "bg-zinc-50 text-zinc-900"}`}>
         <p className="animate-pulse">Loading movies...</p>
       </div>
     );
@@ -34,14 +34,14 @@ export default function Movies() {
 
   if (error) {
     return (
-      <div className={`w-full min-h-screen flex justify-center items-center ${dark ? "bg-black text-white" : "bg-white text-black"}`}>
+      <div className={`w-full min-h-screen flex justify-center items-center ${dark ? "bg-zinc-950 text-zinc-100" : "bg-zinc-50 text-zinc-900"}`}>
         {error}
       </div>
     );
   }
 
   return (
-    <div className={`w-full min-h-screen px-6 py-20 ${dark ? "bg-black text-white" : "bg-white text-black"}`}>
+    <div className={`w-full min-h-screen px-6 py-20 ${dark ? "bg-zinc-950 text-zinc-100" : "bg-zinc-50 text-zinc-900"}`}>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {movies.map(movie => (
           <MovieCard key={movie.id} movie={movie} />

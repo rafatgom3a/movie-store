@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div
       className={`w-full min-h-screen px-6 py-20 ${
-        dark ? "bg-gray-800 text-white" : "bg-gray-100 text-black"
+        dark ? "bg-zinc-950 text-zinc-100" : "bg-zinc-50 text-zinc-900"
       }`}
     >
       <div className="max-w-4xl mx-auto text-center">

@@ -12,7 +12,7 @@ export default function Watchlist() {
     return (
       <div
         className={`w-full min-h-screen flex flex-col items-center justify-center gap-4 ${
-          dark ? "bg-black text-white" : "bg-white text-black"
+          dark ? "bg-zinc-950 text-zinc-100" : "bg-zinc-50 text-zinc-900"
         }`}
       >
         <h2 className="text-xl font-semibold">Your watchlist is empty 🎬</h2>
@@ -34,7 +34,7 @@ export default function Watchlist() {
   return (
     <div
       className={`w-full min-h-screen px-6 py-20 ${
-        dark ? "bg-black text-white" : "bg-white text-black"
+        dark ? "bg-zinc-950 text-zinc-100" : "bg-zinc-50 text-zinc-900"
       }`}
     >
       <h1 className="text-4xl font-bold mb-6 text-center">Watchlist</h1>

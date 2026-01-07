@@ -7,16 +7,18 @@ export default function Footer() {
   const { dark } = useContext(ThemeContext);
 
   return (
-    <footer className={`${dark ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white text-gray-800 border-gray-200"} border-t`}>
+    <footer className={`${dark? "bg-zinc-900 text-zinc-400": "bg-zinc-100 text-zinc-500"} border-t`}>
       <div className="w-full max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         
         {/* Brand */}
         <div>
           <div className="flex items-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <Film className="w-5 h-5 text-white" />
-            </div>
-            <span className={`text-xl font-bold ${dark ? "text-white" : "text-gray-900"}`}>MovieStore</span>
+                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
+          <span className={`${dark? "bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent": "text-current"}`}>
+            🎬
+          </span>
+          MovieStore
+        </Link>
           </div>
 
           <p className={`text-sm ${dark ? "text-gray-400" : "text-gray-500"}`}>
