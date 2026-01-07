@@ -1,21 +1,26 @@
-import { useEffect, useState } from "react";
-import { tmdb } from "../api/tmdb";
-import MovieCard from "../components/MovieCard";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function Home() {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    tmdb.get("/movie/popular").then(res => {
-      setMovies(res.data.results);
-    });
-  }, []);
+  const { dark } = useContext(ThemeContext);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-      {movies.map(movie => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+    <div
+      className={`
+        w-full min-h-screen px-6 py-20
+        ${dark ? "bg-black text-white" : "bg-white text-black"}
+      `}
+    >
+      <div className="text-center">
+        <h1 className="text-5xl font-bold mb-6">
+          🎬 Welcome to MovieStore
+        </h1>
+
+        <p className={`${dark ? "text-gray-300" : "text-gray-700"} text-xl`}>
+          Discover popular, trending, and upcoming movies.
+          Browse movies, add them to your favorites, and build your watchlist.
+        </p>
+      </div>
     </div>
   );
 }
