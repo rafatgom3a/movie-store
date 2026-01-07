@@ -5,24 +5,31 @@ export default function About() {
   const { dark } = useContext(ThemeContext);
 
   return (
-    <div className={`w-full min-h-screen px-6 py-20 ${dark ? "bg-black text-white" : "bg-white text-black"}`}>
-      <div className="text-center">
+    <div
+      className={`w-full min-h-screen px-6 py-20 ${
+        dark ? "bg-gray-800 text-white" : "bg-gray-100 text-black"
+      }`}
+    >
+      <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-6">About MovieStore</h1>
-        <p className={`${dark ? "text-gray-300" : "text-gray-700"} text-lg`}>
-          MovieStore is a modern movies web application built with React.js and Tailwind CSS. 
-          It integrates with the TMDB API to provide users with a seamless experience 
-          to discover, search, and manage movies.
+
+        <p className={`${dark ? "text-gray-300" : "text-gray-700"} text-lg mb-6`}>
+          Welcome to <span className="font-semibold">MovieStore</span> — your go-to
+          platform for discovering movies from around the world. Our goal is to
+          make exploring, tracking, and enjoying movies simple, fast, and fun.
         </p>
 
-        <div className="mt-6 space-y-2">
-          <p>🎬 Browse popular, trending, and upcoming movies</p>
-          <p>❤️ Save favorites and create a personal watchlist</p>
-          <p>⭐ Rate movies locally</p>
-          <p>🌙 Switch between dark and light mode</p>
-        </div>
+        <p className={`${dark ? "text-gray-300" : "text-gray-700"} text-lg mb-6`}>
+          Since our launch in 2024, MovieStore has been built with a passion for
+          cinema and modern web technologies. Whether you're looking for trending
+          movies, upcoming releases, or timeless classics, we bring everything
+          together in one place.
+        </p>
 
-        <p className="mt-8 text-sm text-gray-400">
-          Built for learning, practice, and portfolio purposes.
+        <p className={`${dark ? "text-gray-300" : "text-gray-700"} text-lg`}>
+          Create your personal watchlist, save your favorite movies, and explore
+          new titles anytime. MovieStore is constantly evolving to deliver a
+          smooth, engaging, and enjoyable movie discovery experience.
         </p>
       </div>
     </div>
