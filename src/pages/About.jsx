@@ -11,7 +11,7 @@ export default function About() {
       }`}
     >
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-6">About MovieStore</h1>
+        <h1 className="text-4xl font-extrabold mb-6">About MovieStore</h1>
 
         <p className={`${dark ? "text-gray-300" : "text-gray-700"} text-lg mb-6`}>
           Welcome to <span className="font-semibold">MovieStore</span> — your go-to
