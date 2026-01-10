@@ -1,14 +1,27 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function NotFound() {
+  const { dark } = useContext(ThemeContext);
+
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center items-center bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white px-4">
-      <h1 className="text-6xl font-bold mb-4">404</h1>
-      <p className="text-xl mb-6">Page Not Found</p>
+    <div
+      className={`w-full min-h-screen flex flex-col items-center justify-center gap-6 p-4 ${
+        dark ? "bg-zinc-950 text-zinc-100" : "bg-zinc-50 text-zinc-900"
+      }`}
+    >
+      <h1 className="text-7xl font-extrabold">404</h1>
+
+      <p className="text-xl opacity-80">
+        Page Not Found
+      </p>
 
       <Link
         to="/"
-        className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+        className="px-6 py-2 rounded-lg font-medium transition
+          bg-indigo-600 text-white hover:bg-indigo-700"
       >
         Back to Home
       </Link>

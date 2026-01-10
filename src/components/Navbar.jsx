@@ -1,7 +1,8 @@
 import { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ThemeContext } from "../context/ThemeContext";
 import { Menu, X, Sun, Moon } from "lucide-react";
+
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function Navbar() {
   const { dark, setDark } = useContext(ThemeContext);
